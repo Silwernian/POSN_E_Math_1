@@ -1,0 +1,11 @@
+[theme]
+base="dark"
+primaryColor="#2df9ff"
+font="serif"
+
+
+[server]
+runOnSave = true
+
+[runner]
+magicEnabled = true
