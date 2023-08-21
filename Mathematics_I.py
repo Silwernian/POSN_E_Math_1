@@ -23,5 +23,5 @@ for i in range(len(Lecture)):
     if switch_button[i]:
         switch_page(pages_name[i])
 
-
 st.divider()
+
