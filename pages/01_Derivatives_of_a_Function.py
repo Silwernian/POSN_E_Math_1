@@ -1,4 +1,9 @@
 import streamlit as st
+import plotly.express as px
+import plotly.graph_objects as go
+import numpy as np
+import pandas as pd
+
 
 from streamlit_extras.add_vertical_space import add_vertical_space
 
@@ -167,12 +172,32 @@ with topic[1]:
     ex_2_soln = st.checkbox(':red[ดูเฉลยที่นี่. . .:balloon: ]')
     if ex_2_soln:
         ex02_col = topic[1].columns([1,1])
-        ex02_col[0].markdown(':blue[$y=2x-1$]')
-        ex02_col[0].image('data/01_derivatives/ex_02_01.png',use_column_width=True)
-        ex02_col[1].markdown(':blue[$y=x^2-2$]')
-        ex02_col[1].image('data/01_derivatives/ex_02_02.png',use_column_width=True)
-        st.markdown(':blue[$y=\\sin x$]')
-        st.image('data/01_derivatives/ex_02_03.png',use_column_width=True)
+        ex02_col[0].markdown(':blue[กราฟ. . . $y=2x-1$]')
+        x1 = np.linspace(-1.5,2.5,50)
+        y = 2*x1-1
+        fig1 = go.Figure()
+        fig1.add_trace(go.Scatter(x=x1,y=y,line_color='aqua', line_width=5))
+        fig1.update_xaxes(showgrid=True, zeroline=True, zerolinewidth=0.3, zerolinecolor='yellow')
+        fig1.update_yaxes(showgrid=True, zeroline=True, zerolinewidth=0.3, zerolinecolor='yellow')
+        ex02_col[0].plotly_chart(fig1,use_container_width=True)
+
+        ex02_col[1].markdown(':blue[กราฟ. . . $y=x^2-2$]')
+        x2 = np.linspace(-3.5,3.5,50)
+        y2 = x2**2-2
+        fig2 = go.Figure()
+        fig2.add_trace(go.Scatter(x=x2,y=y2,line_color='aqua', line_width=5))
+        fig2.update_xaxes(showgrid=True, zeroline=True, zerolinewidth=0.3, zerolinecolor='yellow')
+        fig2.update_yaxes(showgrid=True, zeroline=True, zerolinewidth=0.3, zerolinecolor='yellow')
+        ex02_col[1].plotly_chart(fig2,use_container_width=True)
+
+        st.markdown(':blue[กราฟ. . . $y=\\sin x$]')
+        x3 = np.linspace(-1.5*np.pi,1.5*np.pi,50)
+        y3 = np.sin(x3)
+        fig3 = go.Figure()
+        fig3.add_trace(go.Scatter(x=x3,y=y3,line_color='aqua', line_width=5))
+        fig3.update_xaxes(showgrid=True, zeroline=True, zerolinewidth=0.3, zerolinecolor='yellow')
+        fig3.update_yaxes(showgrid=True, zeroline=True, zerolinewidth=0.3, zerolinecolor='yellow')
+        st.plotly_chart(fig3,use_container_width=True)
 
 #---- Topic 3: อัตราเร็วและความเร็วเฉลี่ย----#
 with topic[2]:
