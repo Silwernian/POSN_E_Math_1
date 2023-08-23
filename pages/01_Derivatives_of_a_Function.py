@@ -222,7 +222,7 @@ $$
 > :orange[Q3:] ในช่วง $\\;t=10\\;s\\;$ ถึง $\\;t=20\\;s\\;$ ใครมีอัตราเร็วเฉลี่ยมากกว่ากัน 
 '''
     )
-    ex03_soln = st.checkbox(':blue[ดูเฉลยที่นี่. . .:balloon:]')
+    ex03_soln = st.checkbox(':blue[ดูเฉลยที่นี่ . . .:balloon:]')
     if ex03_soln:
         st.markdown(
             '''
